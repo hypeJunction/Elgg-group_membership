@@ -24,7 +24,7 @@ if ($member = check_entity_relationship($entity->guid, 'member', $group->guid)) 
 
 $last_action = max($entity->last_action, $entity->last_login, $entity->time_created);
 if ($last_action) {
-	$subtitle['last_action'] = elgg_echo('user:friends:last_action', [elgg_get_friendly_time($last_action)]);
+	$subtitle['last_action'] = elgg_echo('user:membership:last_action', [elgg_get_friendly_time($last_action)]);
 }
 
 $menu_params = $vars;
