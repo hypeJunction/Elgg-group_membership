@@ -16,8 +16,8 @@ elgg_register_event_handler('init', 'system', 'group_membership_init');
  */
 function group_membership_init() {
 
-	elgg_extend_view('elgg.css', 'user/format/member.css');
-	elgg_extend_view('admin.css', 'user/format/member.css');
+	elgg_extend_view('css/elgg', 'user/format/member.css');
+	elgg_extend_view('css/admin', 'user/format/member.css');
 
 	elgg_register_plugin_hook_handler('route', 'groups', 'group_membership_router');
 	elgg_register_plugin_hook_handler('sort_fields', 'user', 'group_membership_sort_fields');
@@ -50,7 +50,7 @@ function group_membership_router($hook, $type, $return, $params) {
 	$initial_identifier = elgg_extract('identifier', $params);
 	$identifier = elgg_extract('identifier', $return);
 	$segments = elgg_extract('segments', $return);
-
+	
 	if ($identifier !== 'groups') {
 		return;
 	}
@@ -74,9 +74,9 @@ function group_membership_router($hook, $type, $return, $params) {
 			$resource_params['guid'] = $guid;
 			$resource_params['sort'] = $sort;
 			if (!elgg_is_active_plugin('user_sort') && elgg_view_exists("resources/groups/members/$sort")) {
-				echo elgg_view_resource("groups/members/$sort", $resource_params);
+				echo elgg_view("resources/groups/members/$sort", $resource_params);
 			} else {
-				echo elgg_view_resource('groups/members', $resource_params);
+				echo elgg_view('resources/groups/members', $resource_params);
 			}
 			return false;
 		case 'requests' :
@@ -84,7 +84,7 @@ function group_membership_router($hook, $type, $return, $params) {
 		case 'invite' :
 			$guid = array_shift($segments);
 			$resource_params['guid'] = $guid;
-			echo elgg_view_resource("groups/$page", $resource_params);
+			echo elgg_view("resources/groups/$page", $resource_params);
 			return false;
 	}
 }
