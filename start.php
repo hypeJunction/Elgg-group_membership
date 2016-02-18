@@ -45,6 +45,10 @@ function group_membership_init() {
  */
 function group_membership_router($hook, $type, $return, $params) {
 
+	if (!is_array($return)) {
+		return;
+	}
+	
 	// Initial page identifier might be different from /groups
 	// i.e. subtype specific handler e.g. /schools
 	$initial_identifier = elgg_extract('identifier', $params);
