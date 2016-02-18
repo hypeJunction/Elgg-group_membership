@@ -16,7 +16,8 @@ return [
 	'user:membership:member_since' => 'Member since %s',
 	'user:membership:requested' => 'Membership requested on %s',
 	'user:membership:invited' => 'Invitation sent on %s',
-
+	'user:membership:last_action' => 'Last seen %s',
+	
 	'user:membership:group_admin' => 'Administrator',
 	'groups:makeadmin' => 'Make admin',
 	'groups:removeadmin' => 'Revoke admin',
