@@ -1,3 +1,15 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/hypeJunction/Elgg-group_membership/compare/2.0.0...v2.0.1) (2016-12-16)
+
+
+### Bug Fixes
+
+* **actions:** fix action path ([9ffef04](https://github.com/hypeJunction/Elgg-group_membership/commit/9ffef04))
+* **actions:** fix instance checks in make/remove admin actions ([7c8f031](https://github.com/hypeJunction/Elgg-group_membership/commit/7c8f031))
+* **actions:** fix typos in language strings ([94bf808](https://github.com/hypeJunction/Elgg-group_membership/commit/94bf808))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/hypeJunction/Elgg-group_membership/compare/1.0.0...v2.0.0) (2016-12-16)
 
