@@ -6,7 +6,7 @@ $group_guid = get_input('group_guid', $vars);
 $user = get_entity($user_guid);
 $group = get_entity($group_guid);
 
-if (!$user instanceof ElggGroup || !$group instanceof ElggGroup) {
+if (!$user instanceof ElggUser || !$group instanceof ElggGroup) {
 	register_error(elgg_echo('groups:membership:bad_request'));
 	forward(REFERRER);
 }
