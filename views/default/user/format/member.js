@@ -1,16 +1,24 @@
-define(function(require) {
+define(function (require) {
 	var elgg = require('elgg');
 	var $ = require('jquery');
 	var spinner = require('elgg/spinner');
 
-	$(document).on('click', '.elgg-menu-item-groups-makeadmin > a, .elgg-menu-item-groups-removeadmin > a', function(e) {
+	$(document).on('click', '.elgg-menu-item-groups-makeadmin > a, .elgg-menu-item-groups-removeadmin > a', function (e) {
+
+		if ($(this).is('[data-confirm],.elgg-requires-confirmation')) {
+			var confirmText = $(this).data('confirm') || elgg.echo('question:areyousure');
+			if (!confirm(confirmText)) {
+				return false;
+			}
+		}
+
 		var $elem = $(this);
 
 		e.preventDefault();
 		elgg.action($elem.attr('href'), {
 			beforeSend: spinner.start,
 			complete: spinner.stop,
-			success: function(response) {
+			success: function (response) {
 				if (response.status >= 0) {
 					$elem.parent().fadeOut();
 				}
@@ -18,13 +26,20 @@ define(function(require) {
 		});
 	});
 
-	$(document).on('click', '.elgg-menu-item-groups-removeuser > a, .elgg-menu-item-groups-request-accept > a, .elgg-menu-item-groups-request-decline > a, elgg-menu-item-groups-invitation-revoke > a', function(e) {
+	$(document).on('click', '.elgg-menu-item-groups-removeuser > a, .elgg-menu-item-groups-request-accept > a, .elgg-menu-item-groups-request-decline > a, elgg-menu-item-groups-invitation-revoke > a', function (e) {
+		if ($(this).is('[data-confirm],.elgg-requires-confirmation')) {
+			var confirmText = $(this).data('confirm') || elgg.echo('question:areyousure');
+			if (!confirm(confirmText)) {
+				return false;
+			}
+		}
+
 		var $elem = $(this);
 		e.preventDefault();
 		elgg.action($elem.attr('href'), {
 			beforeSend: spinner.start,
 			complete: spinner.stop,
-			success: function(response) {
+			success: function (response) {
 				if (response.status < 0) {
 					return;
 				}
@@ -37,5 +52,5 @@ define(function(require) {
 			}
 		});
 	});
-	
+
 });
