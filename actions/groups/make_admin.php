@@ -17,7 +17,7 @@ if (!$group->isMember($user) || $user->guid == elgg_get_logged_in_user_guid() ||
 }
 
 if (add_entity_relationship($user->guid, 'group_admin', $group->guid)) {
-	system_message(elgg_echo('groups:memembership:make_admin:success'));
+	system_message(elgg_echo('groups:membership:make_admin:success'));
 } else {
-	register_error(elgg_echo('groups:memembership:make_admin:error'));
+	register_error(elgg_echo('groups:membership:make_admin:error'));
 }
