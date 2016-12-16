@@ -27,8 +27,8 @@ function group_membership_init() {
 	elgg_unregister_plugin_hook_handler('register', 'menu:user_hover', 'groups_user_entity_menu_setup');
 	elgg_register_plugin_hook_handler('register', 'menu:membership', 'group_membership_menu_setup');
 
-	elgg_register_action('groups/make_admin', __DIR__ . '/groups/make_admin.php');
-	elgg_register_action('groups/remove_admin', __DIR__ . '/groups/remove_admin.php');
+	elgg_register_action('groups/make_admin', __DIR__ . '/actions/groups/make_admin.php');
+	elgg_register_action('groups/remove_admin', __DIR__ . '/actions/groups/remove_admin.php');
 	elgg_register_plugin_hook_handler('permissions_check', 'group', 'group_membership_group_admin_permissions');
 
 	elgg_register_widget_type('group_members', elgg_echo('groups:widget:group_members'), elgg_echo('groups:widget:group_members:desc'), array('groups'), false);
