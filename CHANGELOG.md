@@ -1,3 +1,13 @@
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/hypeJunction/Elgg-group_membership/compare/2.0.1...v2.0.2) (2019-05-06)
+
+
+### Bug Fixes
+
+* **js:** correctly terminate event handling on cancellation ([b58256a](https://github.com/hypeJunction/Elgg-group_membership/commit/b58256a))
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/hypeJunction/Elgg-group_membership/compare/2.0.0...v2.0.1) (2016-12-16)
 
